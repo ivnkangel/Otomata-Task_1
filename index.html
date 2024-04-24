@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scientific Number Acceptor</title>
+<style>
+    body {
+        font-family: 'Georgia, Verdana';
+        font-size: larger;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+    }
+    #container {
+        width: 700px;
+        margin: 200px auto;
+        text-align: center;
+        border: 7px solid #ff0090;
+        border-radius: 20px;
+        padding: 20px;
+        background: linear-gradient(to bottom, #f0f0f0, #f0f0f0);
+        box-shadow: 2 2 200px rgba(0, 0, 0, 0.1);
+    }
+    #inputField {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    #submitButton {
+        padding: 10px 20px;
+        background-color: #41cc84;
+        color: #fff;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+    #messageContainer {
+        margin-top: 10px;
+    }
+    #message {
+        color: red;
+    }
+    #validMessage {
+        color: rgb(255, 0, 162);
+    }
+    /* Additional box styles */
+    .additional-box {
+        background-color: #ff0090;
+        color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+<div id="container">
+    <h1>✓Scientific Number Acceptor✓</h1>
+    <input type="text" id="inputField" placeholder="Enter a number in scientific notation">
+    <br>
+    <button id="submitButton">Submit</button>
+    <div id="messageContainer">
+        <p id="message"></p>
+        <p id="validMessage"></p>
+    </div>
+    <!-- Additional box -->
+    <div class="additional-box">
+        <h3>✧˚ ༘ ⋆｡♡˚ OTOMATA TASK ✧˚ ༘ ⋆｡♡˚</h3>
+        <h3>Ivanka Angelina Junietta Pasanda</h3>
+        <p>221011060014</p>
+        <p>Kelas A</p>
+
+    </div>
+</div>
+<script>
+document.getElementById("submitButton").addEventListener("click", function() {
+    var input = document.getElementById("inputField").value;
+    var isValid = isScientificNotation(input);
+    if (isValid) {
+        document.getElementById("message").innerText = "";
+        document.getElementById("validMessage").innerText = "Valid scientific notation. Thank you!";
+    } else {
+        document.getElementById("validMessage").innerText = "";
+        document.getElementById("message").innerText = "Invalid input. Please enter a valid number in scientific notation.";
+    }
+});
+
+function isScientificNotation(input) {
+    // Regular expression pattern to match scientific notation
+    var pattern = /^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$/;
+    return pattern.test(input);
+}
+</script>
+</body>
+</html>
